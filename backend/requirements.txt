@@ -1,0 +1,72 @@
+# =============================================================================
+# ElevateRFP — Backend Requirements
+# Python 3.11
+# CrewAI removed: never used at runtime. Custom AgentOrchestrator handles
+# all agent execution via agent.execute(context) — no Crew/Task/Agent objects.
+# =============================================================================     
+
+# --- FastAPI ---
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+
+# --- Database ---
+sqlalchemy==2.0.29
+alembic==1.13.1
+psycopg2-binary==2.9.9
+asyncpg==0.29.0
+
+# --- Auth ---
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.1.2
+
+# --- Pydantic ---
+pydantic==2.7.1
+pydantic-settings==2.2.1
+python-dotenv==1.0.0
+
+# --- LangChain (used by app/core/llm_provider.py only) ---
+langchain==0.1.20
+langchain-openai==0.1.6
+langchain-community==0.0.38
+
+# --- Vector store (app/core/vector_store.py) ---
+faiss-cpu==1.8.0
+chromadb==0.4.24
+scikit-learn==1.4.2
+
+# --- Embeddings (app/core/embeddings.py, vector_store.py) ---
+sentence-transformers==2.7.0
+transformers==4.40.2
+torch==2.3.0
+numpy==1.26.4
+
+# --- Document processing (app/modules/document_processing/) ---
+PyMuPDF==1.24.2
+pdfplumber==0.11.0
+python-docx==1.1.0
+pytesseract==0.3.10
+opencv-python-headless==4.9.0.80
+spacy==3.7.4
+
+PyPDF2==3.0.1
+Pillow==10.3.0
+langchain-core==0.1.52
+langchain-text-splitters==0.0.1
+
+# --- Gemini (utils/llm_helper.py, utils/rag_helper.py) ---
+google-generativeai==0.5.4
+
+# --- Logging (app/main.py, app/core/, app/modules/) ---
+structlog==24.1.0
+
+# --- Async file I/O (document_ingester.py) ---
+aiofiles==23.2.1
+
+# --- HTTP client (FastAPI internals, langchain) ---
+httpx==0.27.0
+
+# --- Dev/test ---
+pytest==8.1.1
+pytest-asyncio==0.23.6
